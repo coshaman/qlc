@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="KO">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+<style>@font-face{font-family:"this";src:url('신명조체.TTF';}</style>
+    <title>마나토끼 마스터</title>
+<!--
+
+Shinsung High School, 2022
+봉사활동
+    개인정보 지킴이
+    프로젝트2
+-->
+
+    </head>
+    
+    <body style="font-family:'this'">
+    
+<textarea id="here"></textarea>
+<textarea id="here3"></textarea>
+<button onclick="dod2();">자동 변환</button>
+<button onclick="dod6();">수동 변환</button>
+<button onclick="dod4();">clear</button>
+<br><textarea id="bod" rows="15" cols="50"></textarea>
+
+
+<br><p id="bod2"></p>
+<script>
+let a, b;
+let c  = ["a", "b"];
+function dod4(){
+	document.getElementById("bod").innerHTML='';
+	document.getElementById("here").value='';
+	document.getElementById("bod2").innerHTML='';
+}
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
+let d;
+function dod2() {document.getElementById("bod").innerHTML="";
+	a = document.getElementById("here").value;
+	/*d = document.getElementById("here3").value;*/
+	d = a.split("https://manatoki")[1].substr(0,3);
+	<!--a = a.replaceAll("\n", "<br/>");-->
+	b = a.split(d + ".");
+	d*=1;
+	d +=1;
+	c = a.split(". ");
+	document.getElementById("here").value="";
+	for(let i=0;i<b.length-1;i++){
+		document.getElementById("bod").innerHTML += b[i] + d + ".";
+	}
+	document.getElementById("bod").innerHTML += b[b.length-1];
+	document.getElementById("bod").select();
+	document.execCommand("copy");
+	document.getElementById("bod").setSelectionRange(0, 0);  //선택영역 초기화
+	
+}function dod6() {document.getElementById("bod").innerHTML="";
+	a = document.getElementById("here").value;
+	d = document.getElementById("here3").value;
+	<!--a = a.replaceAll("\n", "<br/>");-->
+	b = a.split(d + ".");
+	d*=1;
+	d +=1;
+	c = a.split(". ");
+	document.getElementById("here").value="";
+	for(let i=0;i<b.length-1;i++){
+		document.getElementById("bod").innerHTML += b[i] + d + ".";
+	}
+	document.getElementById("bod").innerHTML += b[b.length-1];
+	document.getElementById("bod").select();
+	document.execCommand("copy");
+	document.getElementById("bod").setSelectionRange(0, 0);  //선택영역 초기화
+	
+}
+</script>
+  </body>
+</html>
